@@ -16,7 +16,8 @@ using namespace std;
 
 int main() {
     
-    cout << "Welcome to the Emergency Room simulator!\n\n";
+    //opening menu
+    cout << "Welcome to the Emergency Room of CS273Ville!\n\n";
     string prompt = "What would you like the arrival rate of patients to be (patients/hr): ";
     int rate = read_int(prompt, 1, 60);
     prompt = "How many doctors would you like there to be (1-20): ";
@@ -28,7 +29,7 @@ int main() {
     
     long long int FINISHTIME = 7 * 24 * 60; //simulating for one week
     
-    while (theRoom.getTime() < FINISHTIME) { //run the simulation until the time is up
+    while (theRoom.getTime() < FINISHTIME) { //run the simulation 
         theRoom.update();
     }
     

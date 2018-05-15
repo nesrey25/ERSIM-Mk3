@@ -14,10 +14,9 @@
 class Physician {
 protected:
     Patient currentPatient; //used to store the current patient they are treating
-    //maybe this should be a pointer?? This seems to work fine though
-    int currentTreatmentTime; //used to store the current time that the physician is recquired to treat the patient for
+    int currentTreatmentTime; //used to store the current time that the physician is
 public:
-    Physician() : currentPatient(), currentTreatmentTime(0) {}; //Default constructor to be used by derived classes
+    Physician() : currentPatient(), currentTreatmentTime(0) {}; 
     virtual void treatPatient(Patient newPatient) = 0; //This potenitally could have been made a bool function that checked for patient priority.
     //Instead checking for type_id was used in different parts. Both have their benefits.
     std::pair<bool, Patient> update(long long int clock); //Returns true if the patient is finished treating, and then the returned patient is used to create a record

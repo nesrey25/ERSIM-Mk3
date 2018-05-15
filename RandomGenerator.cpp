@@ -12,11 +12,11 @@
 #include <fstream>
 #include <iostream>
 
-void buildDatabase(std::vector<std::string>& names) //gets all the names from the text file and stores them to the vector
+void buildDatabase(std::vector<std::string>& names) //gets all the names the text file and stores them to the vector
 {
     srand(time(NULL));
     std::ifstream surnames;
-    surnames.open(" ");
+    surnames.open("/Users/Esrey/Desktop/residents_of_273ville.txt"); //text file that reads in names of patients 
     if (surnames) {
         std::string name;
         while (getline(surnames, name)) {
@@ -25,7 +25,6 @@ void buildDatabase(std::vector<std::string>& names) //gets all the names from th
         surnames.close();
     }
     else {
-        //This could be better in terms of exception handling...
         names.push_back("Default Patient Name - Error reading from file");
         std::cout << "Failed to open the file\n";
     }
@@ -49,7 +48,7 @@ std::string randomSurname(std::vector<std::string>& names) //picks a random name
     return names[i];
 }
 
-bool needNewPatient(int ratePerHour) //Uses the inputted rate to randomly decide if a new patient needs to be generated
+bool needNewPatient(int ratePerHour) //A new patient needs to be generated if randomly needed based upon rate 
 {
     int ranNum = rand() % 60;
     if (ranNum < ratePerHour)
