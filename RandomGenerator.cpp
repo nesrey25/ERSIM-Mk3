@@ -1,12 +1,13 @@
 //
 //  RandomGenerator.cpp
-//  E.R-Simulator
+//  CS273 Final
 //
-//  Created by Esrey on 5/6/18.
+//  Created by Esrey on 5/15/18.
 //  Copyright © 2018 Esrey Enterprises. All rights reserved.
 //
 
 #include "RandomGenerator.hpp"
+
 #include <time.h>
 #include <fstream>
 #include <iostream>
@@ -15,7 +16,7 @@ void buildDatabase(std::vector<std::string>& names) //gets all the names from th
 {
     srand(time(NULL));
     std::ifstream surnames;
-    surnames.open(" "); //include the file input of names from cs273ville for the random input of names in order for simulation to run 
+    surnames.open(" ");
     if (surnames) {
         std::string name;
         while (getline(surnames, name)) {
